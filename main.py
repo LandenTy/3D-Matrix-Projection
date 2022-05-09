@@ -17,6 +17,11 @@ p2 = e.Vector(vectorList, [[50], [-50], [0]])
 p3 = e.Vector(vectorList, [[-50], [50], [0]])
 p4 = e.Vector(vectorList, [[50], [50], [0]])
 
+p5 = e.Vector(vectorList, [[-50], [-50], [-10]])
+p6 = e.Vector(vectorList, [[50], [-50], [-10])
+p7 = e.Vector(vectorList, [[-50], [50], [-10]])
+p8 = e.Vector(vectorList, [[50], [50], [-10]])
+
 # Program
 for x in range(len(vectorList)):
     
