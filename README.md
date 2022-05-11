@@ -1,7 +1,10 @@
-# 3D-Matrix-Projection
-This repository is dedicated to my goal of creating a working Orthagonal-Matrix 3D Projection Engine in PyGame using TechSmart.
-I've accomplished the 3D Engine idea before using Visual Studio Code before but I've never been able to get it to work in TechSmart. (Yet)
-I've been working around the clock since early December (5 Months Ago), and I'm attempting to get this Engine working! I began my
-3-Demensional Adventure by creating a Sprite-Based 3D Engine, that relied on Player and Camera Positions to differentiate the sizes
-of different objects. Then I moved on to GPU calculated Orthagonal Engines (What I'm working on now), and soon I'll be working on adding
-shaders, lighting, shadows, and sounds!
+# 3D-Matrix-Projection : Update v0.0.2!
+I've just completed automatic rotation about the Z-Axis with my Engine! I plan to add a wireframe, and filling functions
+to use on the Quads, and I want to further explore other shapes. I think a triangle would be a good shape to start out
+with. Next, I want to see if I can add shaders, and lighting! But those steps are for a later day. I've been working
+around the clock since Early December, and I'm so so very proud to announce the bare-bones completion of this new Engine!
+
+I've also been thinking about making a custom Multiplayer solution. If TechSmart had the ability to use the Sockets library,
+I'd use that. But alas it doesn't, but it does have access to the Requests Library. So I may try to create a Multiplayer Engine
+to along-side my 3D Engine by sending back and fourth JSON Data Packets. With both the Server, and Computer making calculations
+based on players positions around them. I'm sure I'll make it work!
