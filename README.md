@@ -5,6 +5,6 @@ with. Next, I want to see if I can add shaders, and lighting! But those steps ar
 around the clock since Early December, and I'm so so very proud to announce the bare-bones completion of this new Engine!
 
 I've also been thinking about making a custom Multiplayer solution. If TechSmart had the ability to use the Sockets library,
-I'd use that. But alas it doesn't, but it does have access to the Requests Library. So I may try to create a Multiplayer Engine
-to along-side my 3D Engine by sending back and fourth JSON Data Packets. With both the Server, and Computer making calculations
-based on players positions around them. I'm sure I'll make it work!
+I'd use that. But alas it doesn't, although it does have access to the Requests Library. So I may try to create a Multiplayer Engine
+to go along-side my 3D Engine by sending back and fourth JSON Data Packets. With both the Server, and Computer making calculations
+based on their own positions, as well as other player positions. I'm sure I'll make it work!
