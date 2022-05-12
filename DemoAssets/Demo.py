@@ -3,7 +3,7 @@ Demo
 
 Description:
 """
-import Engine as e
+import Game_Engine/Engine as e
 
 rotate = 0.1
 rotationSpeed = 0.009
