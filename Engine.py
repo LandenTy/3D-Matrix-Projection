@@ -4,8 +4,17 @@ Engine
 Description:
 """
 import pygame, sys
+import Matrix_Projection_001 as mm
 from math import sin, cos
 pygame.init()
+
+# Matrix(s) and Vector List(s)
+projection = [[1, 0, 0], [0, 1, 0]]
+vectorList = []
+
+# Angle Degree Variables
+angleZ = 0
+angleY = 0
 
 # WINDOW
 SCREEN_WIDTH = 600
@@ -73,14 +82,51 @@ def clearScreen():
     global win
     window.fill(BLACK)
 
-def Window(running):
+def Window():
     
-    while running:
+    clock = pygame.time.Clock()
+    clock.tick(30)
+    
+    for ev in pygame.event.get():
         
-        for ev in pygame.event.get():
-        
-            if ev.type == pygame.QUIT:
+        if ev.type == pygame.QUIT:
                 
-                sys.exit()
+            sys.exit()
+
+# Functions
+def Quad(x, y, z):
+    
+    p1 = Vector(vectorList, [[-50 + x], [-50 + y], [0 + z]])
+    p2 = Vector(vectorList, [[50 + x], [-50 + y], [0 + z]])
+    p3 = Vector(vectorList, [[-50 + x], [50 + y], [0 + z]])
+    p4 = Vector(vectorList, [[50 + x], [50 + y], [0 + z]])
+    
+    # - DOES NOT WORK - e.Wireframe([p1, p2], (255, 255, 255), 2)
+
+def Rotate():
+    
+    global angleZ
+    global angleY
+    
+    while True:
+    
+        # Rotation Matrixes
+        rotateZ = [[cos(angleZ), -sin(angleZ)], [-sin(angleZ), cos(angleZ)]]
+        #rotateY = [[cos(angleY), -sin(angleY)], [sin(angleY), cos(angleY)]]
+        
+        # Clear Screen
+        clearScreen()
+        
+        # Draws Vertices
+        for x in range(len(vectorList)):
+        
+            projected = mm.matmul(projection, vectorList[x])
+            rotatedZ = mm.matmul(rotateZ, projected)
+            Vertice((255, 255, 255), rotatedZ)
+            
+        # Adds to Angles
+        angleZ += 0.009
+        
+        Window()
 
 pygame.display.flip()
