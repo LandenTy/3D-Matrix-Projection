@@ -30,9 +30,9 @@ maxIndex = 0
 
 CLOSE_WINDOW = False
 
-ROTATE_X = 0
-ROTATE_Y = 0
-ROTATE_Z = 0
+ROTATE_X = "ROTATE_X"
+ROTATE_Y = "ROTATE_Y"
+ROTATE_Z = "ROTATE_Z"
 
 # PROGRAM
 window = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
@@ -109,10 +109,10 @@ class Quad:
     
     def __init__(self, (x, y, z), minIndex, maxIndex):
         
-        p1 = Vector(vectorList, [[-50 + x], [-50 + y], [0 + z]])
-        p2 = Vector(vectorList, [[50 + x], [-50 + y], [0 + z]])
-        p3 = Vector(vectorList, [[-50 + x], [50 + y], [0 + z]])
-        p4 = Vector(vectorList, [[50 + x], [50 + y], [0 + z]])
+        p1 = Vector(vectorList, [[-50 + x], [-50 - y], [0 + z]])
+        p2 = Vector(vectorList, [[50 + x], [-50 - y], [0 + z]])
+        p3 = Vector(vectorList, [[-50 + x], [50 - y], [0 + z]])
+        p4 = Vector(vectorList, [[50 + x], [50 - y], [0 + z]])
         
         self.minIndex = vectorList.index(p1.coordinates)
         self.maxIndex = vectorList.index(p4.coordinates)
@@ -123,7 +123,7 @@ class Quad:
 def Draw(shape):
     
     # Draws Vertices
-    for x in range(shape.maxIndex):
+    for x in range(shape.minIndex, shape.maxIndex):
         
         projected = mm.matmul(projection, vectorList[x])
         Vertice((255, 255, 255), projected)
@@ -131,11 +131,11 @@ def Draw(shape):
 def Rotate(shape, (axis, angle)):
     
     # Rotation Matrixes
-    if axis == ROTATE_Z:
+    if axis == "ROTATE_Z":
         
         rotateZ = [[cos(angle), -sin(angle)], [-sin(angle), cos(angle)]]
     
-    elif axis == ROTATE_Y:
+    elif axis == "ROTATE_Y":
     
         rotateY = [[cos(angle), -sin(angle)], [sin(angle), cos(angle)]]
         
