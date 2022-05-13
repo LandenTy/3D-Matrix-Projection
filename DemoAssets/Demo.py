@@ -3,16 +3,16 @@ Demo
 
 Description:
 """
-import Game_Engine/Engine as e
+import Engine as e
 
 rotate = 0.1
 rotationSpeed = 0.009
     
 # Shapes
-q = e.Quad((0, 200, 0), 0, 0)
-q1 = e.Quad((0, 0, 0), 0, 0)
+q = e.Quad((0, 200, 0), 0, 4)
+q1 = e.Quad((0, 0, 0), 4, 8)
 
-while not e.CLOSE_WINDOW:
+while True:
     
     e.Draw(q)
     
